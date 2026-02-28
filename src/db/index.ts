@@ -1,7 +1,7 @@
-import { JSONFilePreset } from 'lowdb/node'
 import fs from 'node:fs'
-import { APP_DIR, DB_FILE } from '../utils/constants.js'
-import type { DatabaseSchema } from '../types/todo.js'
+import { JSONFilePreset } from 'lowdb/node'
+import type { DatabaseSchema } from '../types/index.js'
+import { APP_DIR, DB_FILE } from '../constants/index.js'
 
 export async function initDB() {
   if (!fs.existsSync(APP_DIR)) {

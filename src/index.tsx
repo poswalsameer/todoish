@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 
-import React from 'react'
 import { render } from 'ink'
-import { App } from './app/App.js'
 import process from 'node:process'
+import { App } from './app/index.js'
 
 // Ensure the CLI app fully hides the normal cursor and can handle clears.
 // But Ink handles most of this itself when it runs full screen or inline.

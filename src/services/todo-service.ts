@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from 'uuid'
-import { initDB } from '../storage/db.js'
-import type { Todo, DatabaseSchema } from '../types/todo.js'
+import { initDB } from '../db/index.js'
+import type { Todo, DatabaseSchema } from '../types/index.js'
 import type { Low } from 'lowdb'
 
 let dbInstance: Low<DatabaseSchema> | null = null

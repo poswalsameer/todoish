@@ -1,21 +1,22 @@
-import React, { useState, useEffect } from 'react'
+import { theme } from '../theme/index.js'
+import { useState, useEffect } from 'react'
+import type { Todo } from '../types/index.js'
+import { Header } from '../components/Header.js'
+import { InputBox } from '../components/input.js'
 import { Box, Text, useApp, useInput } from 'ink'
-import { Header } from './components/Header.js'
-import { TodoList } from './components/TodoList.js'
-import { InputBox } from './components/InputBox.js'
-import { getTodos, addTodo, toggleTodo, deleteTodo } from '../services/todoService.js'
-import type { Todo } from '../types/todo.js'
-import { theme } from '../utils/theme.js'
+import { TodoList } from '../components/todo-list.js'
+import { getTodos, addTodo, toggleTodo, deleteTodo } from '../services/todo-service.js'
 
 export function App() {
-  const { exit } = useApp()
   const [todos, setTodos] = useState<Todo[]>([])
-  const [selectedIndex, setSelectedIndex] = useState(0)
-  const [inputValue, setInputValue] = useState('')
-  const [isLoading, setIsLoading] = useState(true)
-  const [isInputFocused, setIsInputFocused] = useState(true)
+  const [inputValue, setInputValue] = useState<string>('')
+  const [isLoading, setIsLoading] = useState<boolean>(true)
+  const [selectedIndex, setSelectedIndex] = useState<number>(0)
+  const [isInputFocused, setIsInputFocused] = useState<boolean>(true)
 
-  const loadTodos = async () => {
+  const { exit } = useApp()
+
+  async function loadTodos() {
     try {
       const loadedTodos = await getTodos()
       setTodos(loadedTodos)
@@ -26,10 +27,6 @@ export function App() {
       setIsLoading(false)
     }
   }
-
-  useEffect(() => {
-    loadTodos()
-  }, [])
 
   useInput((input, key) => {
     if (isLoading) return
@@ -102,6 +99,10 @@ export function App() {
       }
     }
   })
+
+  useEffect(() => {
+    loadTodos()
+  }, [])
 
   if (isLoading) {
     return (

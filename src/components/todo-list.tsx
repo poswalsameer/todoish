@@ -1,8 +1,7 @@
-import React from 'react'
 import { Box, Text } from 'ink'
-import { TodoItem } from './TodoItem.js'
-import type { Todo } from '../../types/todo.js'
-import { theme } from '../../utils/theme.js'
+import { TodoItem } from './todo-item.js'
+import { theme } from '../theme/index.js'
+import type { Todo } from '../types/index.js'
 
 interface TodoListProps {
   todos: Todo[]

@@ -1,6 +1,5 @@
-import React from 'react'
 import { Box, Text } from 'ink'
-import { theme } from '../../utils/theme.js'
+import { theme } from '../theme/index.js'
 
 export function Header() {
   return (
