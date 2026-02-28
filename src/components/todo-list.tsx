@@ -23,12 +23,12 @@ export function TodoList({ todos, selectedIndex, isFocused }: TodoListProps) {
 
   return (
     <Box flexDirection="column" gap={0}>
-      {start > 0 && <Box paddingX={3}><Text color={theme.muted}>↑ ...</Text></Box>}
+      {start > 0 && <Box paddingX={3}><Text color={theme.secondaryText}>↑ ...</Text></Box>}
       {visibleTodos.map((todo) => {
         const isSelected = todos[selectedIndex]?.id === todo.id
         return <TodoItem key={todo.id} todo={todo} isSelected={isSelected} isFocused={isFocused} />
       })}
-      {end < todos.length && <Box paddingX={3}><Text color={theme.muted}>↓ ...</Text></Box>}
+      {end < todos.length && <Box paddingX={3}><Text color={theme.secondaryText}>↓ ...</Text></Box>}
     </Box>
   )
 }

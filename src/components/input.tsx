@@ -1,6 +1,5 @@
-import React from 'react'
 import { Box, Text } from 'ink'
-import { theme } from '../../theme/index.js'
+import { theme } from '../theme/index.js'
 
 interface InputBoxProps {
   value: string
@@ -9,24 +8,28 @@ interface InputBoxProps {
 
 export function InputBox({ value, isFocused }: InputBoxProps) {
   return (
-    <Box flexDirection="column" marginTop={2}>
+    <Box flexDirection="column" marginTop={0}>
       <Box
-        borderStyle="round"
-        borderColor={isFocused ? theme.accent : theme.muted}
+        borderStyle="single"
+        borderTop={false}
+        borderLeft={false}
+        borderRight={false}
+        borderColor={isFocused ? theme.accent : theme.secondaryText}
         paddingX={1}
+        paddingBottom={1}
         flexDirection="row"
       >
         <Box marginRight={1}>
-          <Text color={isFocused ? theme.accent : theme.muted}>›</Text>
+          <Text color={isFocused ? theme.accent : theme.secondaryText}>›</Text>
         </Box>
         {value ? (
           <Box flexGrow={1}>
-            <Text color={theme.primary}>{value}</Text>
+            <Text color={theme.primaryText}>{value}</Text>
             {isFocused && <Text color={theme.accent}>█</Text>}
           </Box>
         ) : (
           <Box flexGrow={1}>
-            <Text color={theme.muted}>Add a new todo...</Text>
+            <Text color={theme.secondaryText}>Add a new todo...</Text>
             {isFocused && <Text color={theme.accent}>█</Text>}
           </Box>
         )}
