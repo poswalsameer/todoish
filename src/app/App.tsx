@@ -5,6 +5,7 @@ import { TodoList } from './components/TodoList.js'
 import { InputBox } from './components/InputBox.js'
 import { getTodos, addTodo, toggleTodo, deleteTodo } from '../services/todoService.js'
 import type { Todo } from '../types/todo.js'
+import { theme } from '../utils/theme.js'
 
 export function App() {
   const { exit } = useApp()
@@ -105,19 +106,19 @@ export function App() {
   if (isLoading) {
     return (
       <Box padding={1}>
-        <Text color="cyan">Loading tasks...</Text>
+        <Text color={theme.accent}>Loading tasks...</Text>
       </Box>
     )
   }
 
   return (
-    <Box flexDirection="column" padding={1} width="100%">
+    <Box flexDirection="column" padding={2} width="100%">
       <Header />
 
       <Box flexDirection="column" marginY={1} flexGrow={1}>
         {todos.length === 0 ? (
-          <Box paddingX={2} paddingY={1}>
-            <Text color="gray" italic>No todos yet. Add one below!</Text>
+          <Box justifyContent="center" paddingX={2} paddingY={1}>
+            <Text color={theme.muted} italic>No todos yet. Add one below!</Text>
           </Box>
         ) : (
           <TodoList todos={todos} selectedIndex={selectedIndex} isFocused={!isInputFocused} />
@@ -127,8 +128,8 @@ export function App() {
       <InputBox value={inputValue} isFocused={isInputFocused} />
 
       <Box marginTop={1} paddingX={1} justifyContent="center">
-        <Text color="gray" dimColor>
-          Tab Toggle Focus • ↑/↓ Navigate • Space Toggle • Ctrl+D Delete • Enter Add • Esc Exit
+        <Text color={theme.muted}>
+          Tab Focus • ↑/↓ Move • Space Toggle • ↓ Add • Ctrl+D Drop • Esc Exit
         </Text>
       </Box>
     </Box>

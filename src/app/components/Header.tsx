@@ -1,12 +1,16 @@
 import React from 'react'
 import { Box, Text } from 'ink'
+import { theme } from '../../utils/theme.js'
 
 export function Header() {
   return (
-    <Box paddingY={1} justifyContent="center" borderStyle="round" borderColor="cyan">
-      <Text bold color="cyan">
-        ✨ CLI TODO ✨
+    <Box flexDirection="column" alignItems="center" marginTop={1} marginBottom={1}>
+      <Text bold color={theme.accent}>
+        TODOISH
       </Text>
+      <Box marginTop={1}>
+        <Text color={theme.muted}>────────────────────────────────────────</Text>
+      </Box>
     </Box>
   )
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import { Box, Text } from 'ink'
 import { TodoItem } from './TodoItem.js'
 import type { Todo } from '../../types/todo.js'
+import { theme } from '../../utils/theme.js'
 
 interface TodoListProps {
   todos: Todo[]
@@ -23,12 +24,12 @@ export function TodoList({ todos, selectedIndex, isFocused }: TodoListProps) {
 
   return (
     <Box flexDirection="column" gap={0}>
-      {start > 0 && <Box paddingX={3}><Text color="gray" dimColor>↑ ...</Text></Box>}
+      {start > 0 && <Box paddingX={3}><Text color={theme.muted}>↑ ...</Text></Box>}
       {visibleTodos.map((todo) => {
         const isSelected = todos[selectedIndex]?.id === todo.id
         return <TodoItem key={todo.id} todo={todo} isSelected={isSelected} isFocused={isFocused} />
       })}
-      {end < todos.length && <Box paddingX={3}><Text color="gray" dimColor>↓ ...</Text></Box>}
+      {end < todos.length && <Box paddingX={3}><Text color={theme.muted}>↓ ...</Text></Box>}
     </Box>
   )
 }

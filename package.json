@@ -1,11 +1,11 @@
 {
-  "name": "cli-todo",
+  "name": "todoish",
   "version": "1.0.0",
   "description": "Enterprise Terminal UI Todo Generator",
   "type": "module",
   "main": "dist/index.js",
   "bin": {
-    "cli-todo": "dist/index.js"
+    "todoish": "dist/index.js"
   },
   "scripts": {
     "build": "tsc",

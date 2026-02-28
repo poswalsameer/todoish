@@ -1,5 +1,6 @@
 import React from 'react'
 import { Box, Text } from 'ink'
+import { theme } from '../../utils/theme.js'
 
 interface InputBoxProps {
   value: string
@@ -8,27 +9,28 @@ interface InputBoxProps {
 
 export function InputBox({ value, isFocused }: InputBoxProps) {
   return (
-    <Box
-      borderStyle="round"
-      borderColor={isFocused ? 'cyan' : 'gray'}
-      paddingX={1}
-      paddingY={0}
-      flexDirection="row"
-    >
-      <Box marginRight={1}>
-        <Text color={isFocused ? 'cyan' : 'gray'} bold>❯</Text>
+    <Box flexDirection="column" marginTop={2}>
+      <Box
+        borderStyle="round"
+        borderColor={isFocused ? theme.accent : theme.muted}
+        paddingX={1}
+        flexDirection="row"
+      >
+        <Box marginRight={1}>
+          <Text color={isFocused ? theme.accent : theme.muted}>›</Text>
+        </Box>
+        {value ? (
+          <Box flexGrow={1}>
+            <Text color={theme.primary}>{value}</Text>
+            {isFocused && <Text color={theme.accent}>█</Text>}
+          </Box>
+        ) : (
+          <Box flexGrow={1}>
+            <Text color={theme.muted}>Add a new todo...</Text>
+            {isFocused && <Text color={theme.accent}>█</Text>}
+          </Box>
+        )}
       </Box>
-      {value ? (
-        <Box flexGrow={1}>
-          <Text>{value}</Text>
-          {isFocused && <Text color="cyan">█</Text>}
-        </Box>
-      ) : (
-        <Box flexGrow={1}>
-          <Text color="gray" dimColor>Add a new todo...</Text>
-          {isFocused && <Text color="cyan">█</Text>}
-        </Box>
-      )}
     </Box>
   )
 }
