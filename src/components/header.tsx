@@ -15,12 +15,6 @@ export function Header() {
   return (
     <Box flexDirection="column" alignItems="center" marginTop={2} marginBottom={1}>
       <GradientText text={ASCII_LOGO} colors={theme.heroGradient} />
-      <Box marginTop={1}>
-        <Text color={theme.secondaryText}>A calm place for your thoughts.</Text>
-      </Box>
-      <Box marginTop={1}>
-        <Text color={theme.secondaryText}>──────────────────────────────────────────────────</Text>
-      </Box>
     </Box>
   )
 }

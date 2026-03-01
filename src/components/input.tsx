@@ -24,7 +24,7 @@ export function InputBox({ value, isFocused }: InputBoxProps) {
         </Box>
         {value ? (
           <Box flexGrow={1}>
-            <Text color={theme.primaryText}>{value}</Text>
+            <Text color={isFocused ? theme.primaryText : theme.secondaryText}>{value}</Text>
             {isFocused && <Text color={theme.accent}>█</Text>}
           </Box>
         ) : (
