@@ -7,7 +7,7 @@ A fully interactive, aesthetic, and persistent terminal UI (TUI) Todo applicatio
 You can install Todoish globally from the npm registry and run it from anywhere on your computer:
 
 ```bash
-npm install -g todoish-poswalsameer
+npm install -g todoish
 ```
 
 Once installed, simply type the following command in any terminal to open the app:
