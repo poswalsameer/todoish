@@ -1,6 +1,6 @@
 {
   "name": "todoish",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Fast, light-weight terminal first app to maintain your daily goals",
   "type": "module",
   "main": "dist/index.js",
