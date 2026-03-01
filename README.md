@@ -1,44 +1,31 @@
-# Enterprise Terminal UI Todo Generator (Ink + LowDB)
+# Todoish CLI
 
-A fully interactive, aesthetic, persistent terminal UI (TUI) Todo application using TypeScript, Node.js, Ink, and LowDB.
-Built in the spirit of Claude Code or Gemini CLI.
+A fully interactive, aesthetic, and persistent terminal UI (TUI) Todo application using TypeScript, Node.js, Ink, and LowDB. Built in the spirit of modern, beautiful developer tools.
 
 ## Quick Start
 
-1. **Install Dependencies:**
+You can install Todoish globally from the npm registry and run it from anywhere on your computer:
 
-   ```bash
-   npm install
-   ```
+```bash
+npm install -g todoish-poswalsameer
+```
 
-2. **Build Project:**
+Once installed, simply type the following command in any terminal to open the app:
 
-   ```bash
-   npm run build
-   ```
-
-3. **Run Application:**
-
-   ```bash
-   node dist/index.js
-   ```
-
-4. **Link Environment globally:**
-   ```bash
-   npm link
-   ```
-   Now you can start the application anywhere from the terminal by running:
-   ```bash
-   cli-todo
-   ```
+```bash
+todoish
+```
 
 ## Key Features
 
-- **Ink Framework:** Interactive React-style components directly in the terminal.
-- **Persistent Local DB:** Powered by `lowdb`. Data saved automatically to `~/.cli-todo/todos.json`.
-- **Keyboard Shortcuts:**
-  - `↑` / `↓`: Navigate list items.
-  - `Space`: Toggle checkbox.
-  - `D` or `d`: Delete selected item.
-  - `Enter`: Add new item from the minimalist input box.
-- **Strict TypeScript:** Type safe codebase.
+- **Modern UI/UX:** Built with React/Ink, styled with a gorgeous blue/cyan theme, featuring highlight states and spacing inspired by high-end modern CLIs.
+- **Persistent Local DB:** Powered by `lowdb`. Data is saved automatically and securely to `~/.todoish/todos.json` on your local machine.
+- **Keyboard Controls:** Super fast, mouse-free productivity!
+  - `Tab`: Switch focus between the input box and the todo list
+  - `↑ / ↓`: Navigate through your tasks naturally
+  - `Space`: Toggle completed/active status for the selected task
+  - `Enter`: Add a new task (when focused on input)
+  - `Ctrl+D`: Delete the currently selected task (when focused on list)
+  - `Ctrl+Backspace`: Delete word-by-word while typing in the input
+  - `Esc`: Safely close the application
+- **Strict TypeScript:** Built on a completely type-safe React UI codebase.

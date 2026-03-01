@@ -1,7 +1,7 @@
 {
   "name": "todoish",
   "version": "1.0.0",
-  "description": "Enterprise Terminal UI Todo Generator",
+  "description": "Fast, light-weight terminal first app to maintain your daily goals",
   "type": "module",
   "main": "dist/index.js",
   "bin": {
