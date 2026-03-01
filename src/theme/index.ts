@@ -9,11 +9,11 @@ export interface Theme {
 }
 
 export const theme: Theme = {
-  background: '#0f1115', // Near black
-  heroGradient: ['#b19cd9', '#ff77ff'], // Option D: Lavender -> Soft Magenta
-  primaryText: '#e0e0e0',    // soft white-gray
-  secondaryText: '#7a819b',  // muted gray
-  accent: '#db88e5',     // matches hero gradient midpoint
-  selectedBg: '#1e1e2e', // soft tinted background
-  danger: '#e06c75',     // soft red
+  background: '#0b1220', // deep navy (not black)
+  heroGradient: ['#38bdf8', '#06b6d4'], // Sky blue → Cyan
+  primaryText: '#d6e2ff', // cool soft blue-white
+  secondaryText: '#6b7da6', // blue-gray muted
+  accent: '#22d3ee', // vibrant cyan accent
+  selectedBg: '#111a2b', // subtle navy tint
+  danger: '#f87171', // controlled soft red
 }
